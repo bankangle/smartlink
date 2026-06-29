@@ -146,10 +146,13 @@
       {/each}
     </ul>
 
+    <!-- "Powered by SmartLink" hidden for now — re-add later.
     <footer class="foot animate-fade-in" style="animation-delay: 500ms;">
       <span class="brand-dot"></span>
       Powered by <strong>SmartLink</strong>
     </footer>
+    -->
+    <div style="height: 24px;"></div>
   </div>
 
   <!-- Toast -->

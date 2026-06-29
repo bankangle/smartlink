@@ -4,7 +4,8 @@
 
   let { data }: { data: PageData } = $props();
   const artists = $derived(data.artists ?? []);
-  const year = new Date().getFullYear();
+  // Footer year hidden for now — re-add later.
+  // const year = new Date().getFullYear();
 
   // Covers for the drifting background wall — repeated so the marquee never runs dry.
   const covers = $derived(artists.map((a) => a.artworkUrl).filter((u): u is string => !!u));
@@ -125,9 +126,12 @@
     {/if}
   </section>
 
+  <!-- Footer hidden for now — re-add later.
   <footer class="relative mx-auto max-w-6xl px-5 pb-10 text-center text-xs text-white/30 sm:px-8">
     {year}
   </footer>
+  -->
+  <div class="pb-10"></div>
 </main>
 
 <style>
