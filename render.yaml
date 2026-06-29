@@ -1,0 +1,41 @@
+# Render Blueprint — provisions the whole stack from this repo.
+#   1. A free managed Postgres database.
+#   2. One free web service (Caddy + .NET API + SvelteKit) built from Dockerfile.render.
+# Deploy via the Render dashboard: New → Blueprint → pick this repo.
+databases:
+  - name: smartlink-db
+    plan: free
+    databaseName: smartlink
+    user: smartlink
+
+services:
+  - type: web
+    name: coasthill-smartlink
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile.render
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      # Connection string for the managed database (parsed into Npgsql form by the API).
+      - key: DATABASE_URL
+        fromDatabase:
+          name: smartlink-db
+          property: connectionString
+      # Admin token signing secret — generated once by Render.
+      - key: Jwt__Key
+        generateValue: true
+      - key: AdminSeed__Username
+        value: admin
+      # Set this in the dashboard before first deploy (it's your admin login password).
+      - key: AdminSeed__Password
+        sync: false
+      # Fresh DB starts empty; the roster is seeded after deploy.
+      - key: DemoSeed__Enabled
+        value: "false"
+      # Spotify pre-save credentials — paste into the dashboard once the Spotify app exists.
+      - key: Spotify__ClientId
+        sync: false
+      - key: Spotify__ClientSecret
+        sync: false

@@ -1,0 +1,12 @@
+.git
+**/node_modules
+**/bin
+**/obj
+**/.svelte-kit
+**/.output
+**/.vs
+**/.idea
+**/.env
+**/.env.*
+*.md
+infra/docker-compose*.yml

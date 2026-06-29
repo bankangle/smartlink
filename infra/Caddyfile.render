@@ -1,0 +1,26 @@
+# Caddy config for the combined Render service. Render terminates TLS and routes
+# external HTTPS to the container's $PORT, so Caddy runs plain HTTP here and just
+# reverse-proxies to the two internal processes — same-origin, exactly like the
+# docker-compose stack.
+{
+	admin off
+	auto_https off
+	persist_config off
+}
+
+:{$PORT:10000} {
+	encode gzip zstd
+
+	# API, click-redirects and OAuth callbacks all live under /api.
+	handle /api/* {
+		reverse_proxy 127.0.0.1:8080
+	}
+	# Health check (Render pings this).
+	handle /health {
+		reverse_proxy 127.0.0.1:8080
+	}
+	# Everything else is the SvelteKit app (SSR).
+	handle {
+		reverse_proxy 127.0.0.1:3000
+	}
+}

@@ -17,8 +17,13 @@ builder.Services.Configure<AdminSeedOptions>(builder.Configuration.GetSection("A
 builder.Services.Configure<AppUrlsOptions>(builder.Configuration.GetSection("AppUrls"));
 
 // ---- Database ----
-var connectionString = builder.Configuration.GetConnectionString("Postgres")
-    ?? "Host=localhost;Port=5432;Database=smartlink;Username=smartlink;Password=smartlink";
+// Managed platforms (Render, Heroku, …) expose a single DATABASE_URL; convert it
+// to the Npgsql key=value form. Falls back to the configured connection string.
+var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+var connectionString = !string.IsNullOrWhiteSpace(databaseUrl)
+    ? NpgsqlFromUrl(databaseUrl)
+    : builder.Configuration.GetConnectionString("Postgres")
+        ?? "Host=localhost;Port=5432;Database=smartlink;Username=smartlink;Password=smartlink";
 builder.Services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connectionString));
 
 // ---- HTTP clients for outbound integrations ----
@@ -95,3 +100,16 @@ app.MapAdminEndpoints();
 await app.MigrateAndSeedAsync();
 
 app.Run();
+
+// Converts a postgres://user:pass@host:port/db URL into an Npgsql connection string.
+static string NpgsqlFromUrl(string url)
+{
+    var uri = new Uri(url);
+    var creds = uri.UserInfo.Split(':', 2);
+    var database = uri.AbsolutePath.Trim('/');
+    var port = uri.Port > 0 ? uri.Port : 5432;
+    var user = Uri.UnescapeDataString(creds[0]);
+    var pass = creds.Length > 1 ? Uri.UnescapeDataString(creds[1]) : "";
+    return $"Host={uri.Host};Port={port};Database={database};Username={user};Password={pass};" +
+           "SSL Mode=Prefer;Trust Server Certificate=true";
+}
