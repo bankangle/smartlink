@@ -9,13 +9,6 @@
   // Covers for the drifting background wall — repeated so the marquee never runs dry.
   const covers = $derived(artists.map((a) => a.artworkUrl).filter((u): u is string => !!u));
   const wall = $derived([...covers, ...covers, ...covers].slice(0, Math.max(covers.length * 2, 12)));
-
-  const stats = $derived([
-    '3B+ streams',
-    '#1 Billboard Electronic',
-    'FEEL · 183M TikTok views',
-    `${artists.length} artists`
-  ]);
 </script>
 
 <svelte:head>
@@ -23,7 +16,7 @@
   <meta name="description" content="One smart link per release — every streaming platform, plus per-platform click analytics." />
 </svelte:head>
 
-<main class="relative min-h-[100dvh] overflow-hidden bg-[#070708] text-white">
+<main class="relative min-h-[100dvh] select-none overflow-hidden bg-[#070708] text-white [-webkit-touch-callout:none]">
   <!-- artist entry — the only way in; the moderator just remembers /admin -->
   <a
     href="/admin/login"
@@ -77,13 +70,6 @@
         </div>
       {/if}
 
-      <!-- stats ticker -->
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center text-xs text-white/40">
-        {#each stats as s, i}
-          {#if i > 0}<span class="text-white/20">•</span>{/if}
-          <span class="font-medium text-white/55">{s}</span>
-        {/each}
-      </div>
     </div>
   </section>
 

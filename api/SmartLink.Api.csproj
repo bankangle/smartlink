@@ -18,4 +18,9 @@
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Coasthill IV roster, seeded on first boot so a fresh deploy isn't blank. -->
+    <EmbeddedResource Include="Data\roster-seed.json" />
+  </ItemGroup>
+
 </Project>

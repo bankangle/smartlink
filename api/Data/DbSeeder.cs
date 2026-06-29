@@ -1,3 +1,4 @@
+using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using SmartLink.Api.Config;
@@ -37,12 +38,79 @@ public static class DbSeeder
             log.LogInformation("Seeded admin user '{User}'.", seed.Username);
         }
 
+        // Seed the Coasthill IV roster from the embedded JSON so a fresh deploy
+        // ships with real content. Idempotent: only creates pages whose slug is
+        // missing, so it's safe to run on every boot.
+        await SeedRosterAsync(db, log);
+
         // Best-effort demo page so a fresh deployment isn't blank. Skips silently
         // if disabled, if any pages already exist, or if Odesli is unreachable.
         var seedDemo = config.GetValue("DemoSeed:Enabled", true);
         if (seedDemo && !await db.Pages.AnyAsync())
         {
             await TrySeedDemoPageAsync(sp, db, config, log);
+        }
+    }
+
+    private record RosterPage(
+        string Slug, string ArtistName, string Title, string? Subtitle, string? ArtworkUrl,
+        string? AccentColor, string? SourceUrl, bool IsPublished, List<RosterLink> Links);
+    private record RosterLink(
+        string Platform, string Url, string ActionLabel, int SortOrder, bool IsEnabled,
+        string? DeezerTrackId, string? SpotifyTrackId);
+
+    /// <summary>Creates any roster pages (from the embedded seed file) whose slug isn't present yet.</summary>
+    private static async Task SeedRosterAsync(AppDbContext db, ILogger log)
+    {
+        try
+        {
+            var asm = typeof(DbSeeder).Assembly;
+            var resourceName = Array.Find(asm.GetManifestResourceNames(), n => n.EndsWith("roster-seed.json", StringComparison.Ordinal));
+            if (resourceName is null) { log.LogInformation("Roster seed resource not found; skipping."); return; }
+
+            await using var stream = asm.GetManifestResourceStream(resourceName)!;
+            var roster = await JsonSerializer.DeserializeAsync<List<RosterPage>>(
+                stream, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            if (roster is null || roster.Count == 0) return;
+
+            var existing = (await db.Pages.Select(p => p.Slug).ToListAsync()).ToHashSet();
+            var added = 0;
+            foreach (var r in roster.Where(r => !existing.Contains(r.Slug)))
+            {
+                db.Pages.Add(new Page
+                {
+                    Slug = r.Slug,
+                    ArtistName = r.ArtistName,
+                    Title = r.Title,
+                    Subtitle = r.Subtitle,
+                    ArtworkUrl = r.ArtworkUrl,
+                    AccentColor = r.AccentColor,
+                    SourceUrl = r.SourceUrl,
+                    IsPublished = r.IsPublished,
+                    OwnerId = null, // moderator/seed-owned → always public
+                    Links = (r.Links ?? new()).Select(l => new PlatformLink
+                    {
+                        Platform = l.Platform,
+                        Url = l.Url,
+                        ActionLabel = l.ActionLabel,
+                        SortOrder = l.SortOrder,
+                        IsEnabled = l.IsEnabled,
+                        DeezerTrackId = l.DeezerTrackId,
+                        SpotifyTrackId = l.SpotifyTrackId
+                    }).ToList()
+                });
+                added++;
+            }
+
+            if (added > 0)
+            {
+                await db.SaveChangesAsync();
+                log.LogInformation("Seeded {Count} roster page(s).", added);
+            }
+        }
+        catch (Exception ex)
+        {
+            log.LogWarning(ex, "Roster seed skipped due to an error.");
         }
     }
 

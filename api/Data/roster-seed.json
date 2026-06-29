@@ -1,0 +1,644 @@
+﻿[
+    {
+        "slug":  "anna-marx",
+        "artistName":  "Anna Marx",
+        "title":  "so good",
+        "subtitle":  "out now",
+        "artworkUrl":  "https://i.scdn.co/image/ab67616d0000b273366dfa923190f7cbdd57deff",
+        "accentColor":  "#6f2323",
+        "sourceUrl":  "https://open.spotify.com/track/6FSm21kTR3azIHOn42FtoX",
+        "isPublished":  true,
+        "links":  [
+                      {
+                          "platform":  "spotify",
+                          "url":  "https://open.spotify.com/track/6FSm21kTR3azIHOn42FtoX",
+                          "actionLabel":  "Play",
+                          "sortOrder":  0,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  "6FSm21kTR3azIHOn42FtoX"
+                      },
+                      {
+                          "platform":  "tidal",
+                          "url":  "https://listen.tidal.com/track/502190372",
+                          "actionLabel":  "Play",
+                          "sortOrder":  10,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "pandora",
+                          "url":  "https://www.pandora.com/TR:201555615",
+                          "actionLabel":  "Play",
+                          "sortOrder":  20,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      }
+                  ]
+    },
+    {
+        "slug":  "beneld",
+        "artistName":  "Beneld",
+        "title":  "her name",
+        "subtitle":  "out now",
+        "artworkUrl":  "https://i.scdn.co/image/ab67616d0000b2734021f534829146dc683c556d",
+        "accentColor":  "#616162",
+        "sourceUrl":  "https://open.spotify.com/track/2rtQyuqgXnVWTlkCWKuBNc",
+        "isPublished":  true,
+        "links":  [
+                      {
+                          "platform":  "spotify",
+                          "url":  "https://open.spotify.com/track/2rtQyuqgXnVWTlkCWKuBNc",
+                          "actionLabel":  "Play",
+                          "sortOrder":  0,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  "2rtQyuqgXnVWTlkCWKuBNc"
+                      },
+                      {
+                          "platform":  "amazonMusic",
+                          "url":  "https://music.amazon.com/albums/B0DSW71M3N?trackAsin=B0DSWBHW18",
+                          "actionLabel":  "Play",
+                          "sortOrder":  10,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "deezer",
+                          "url":  "https://www.deezer.com/track/3182206831",
+                          "actionLabel":  "Play",
+                          "sortOrder":  20,
+                          "isEnabled":  true,
+                          "deezerTrackId":  "3182206831",
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "tidal",
+                          "url":  "https://listen.tidal.com/track/411272876",
+                          "actionLabel":  "Play",
+                          "sortOrder":  30,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "pandora",
+                          "url":  "https://www.pandora.com/TR:147889197",
+                          "actionLabel":  "Play",
+                          "sortOrder":  40,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "amazonStore",
+                          "url":  "https://amazon.com/dp/B0DSWBHW18",
+                          "actionLabel":  "Buy",
+                          "sortOrder":  50,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      }
+                  ]
+    },
+    {
+        "slug":  "bury",
+        "artistName":  "BURY",
+        "title":  "FEEL",
+        "subtitle":  "out now",
+        "artworkUrl":  "https://i.scdn.co/image/ab67616d0000b273ffeae5ee87089b6c226a9e15",
+        "accentColor":  "#303941",
+        "sourceUrl":  "https://open.spotify.com/track/6F12MoUtqXHy8Pdy110YeS",
+        "isPublished":  true,
+        "links":  [
+                      {
+                          "platform":  "spotify",
+                          "url":  "https://open.spotify.com/track/6F12MoUtqXHy8Pdy110YeS",
+                          "actionLabel":  "Play",
+                          "sortOrder":  0,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  "6F12MoUtqXHy8Pdy110YeS"
+                      },
+                      {
+                          "platform":  "amazonMusic",
+                          "url":  "https://music.amazon.com/albums/B0D4978FW2?trackAsin=B0D4982K8K",
+                          "actionLabel":  "Play",
+                          "sortOrder":  10,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "deezer",
+                          "url":  "https://www.deezer.com/track/2804207422",
+                          "actionLabel":  "Play",
+                          "sortOrder":  20,
+                          "isEnabled":  true,
+                          "deezerTrackId":  "2804207422",
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "tidal",
+                          "url":  "https://listen.tidal.com/track/363477996",
+                          "actionLabel":  "Play",
+                          "sortOrder":  30,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "pandora",
+                          "url":  "https://www.pandora.com/TR:189902086",
+                          "actionLabel":  "Play",
+                          "sortOrder":  40,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "amazonStore",
+                          "url":  "https://amazon.com/dp/B0D4982K8K",
+                          "actionLabel":  "Buy",
+                          "sortOrder":  50,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "appleMusic",
+                          "url":  "https://music.apple.com/us/song/feel/1746659186",
+                          "actionLabel":  "Play",
+                          "sortOrder":  60,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "youtube",
+                          "url":  "https://www.youtube.com/watch?v=pDMxIDr1fWg",
+                          "actionLabel":  "Watch",
+                          "sortOrder":  70,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      }
+                  ]
+    },
+    {
+        "slug":  "ex-habit",
+        "artistName":  "Ex Habit",
+        "title":  "love me",
+        "subtitle":  "out now",
+        "artworkUrl":  "https://i.scdn.co/image/ab67616d0000b273a989b34a8efa00bf7e657fc5",
+        "accentColor":  "#a0a0a0",
+        "sourceUrl":  "https://open.spotify.com/track/6Gpim0VEZc2UZRVcapsWIv",
+        "isPublished":  true,
+        "links":  [
+                      {
+                          "platform":  "spotify",
+                          "url":  "https://open.spotify.com/track/6Gpim0VEZc2UZRVcapsWIv",
+                          "actionLabel":  "Play",
+                          "sortOrder":  0,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  "6Gpim0VEZc2UZRVcapsWIv"
+                      },
+                      {
+                          "platform":  "amazonMusic",
+                          "url":  "https://music.amazon.com/albums/B0BWV7S79K?trackAsin=B0BWVB42G9",
+                          "actionLabel":  "Play",
+                          "sortOrder":  10,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "deezer",
+                          "url":  "https://www.deezer.com/track/2165336737",
+                          "actionLabel":  "Play",
+                          "sortOrder":  20,
+                          "isEnabled":  true,
+                          "deezerTrackId":  "2165336737",
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "tidal",
+                          "url":  "https://listen.tidal.com/track/279878830",
+                          "actionLabel":  "Play",
+                          "sortOrder":  30,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "pandora",
+                          "url":  "https://www.pandora.com/TR:111218765",
+                          "actionLabel":  "Play",
+                          "sortOrder":  40,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "amazonStore",
+                          "url":  "https://amazon.com/dp/B0BWVB42G9",
+                          "actionLabel":  "Buy",
+                          "sortOrder":  50,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      }
+                  ]
+    },
+    {
+        "slug":  "mandrazo",
+        "artistName":  "Mandrazo",
+        "title":  "Dangerous Love",
+        "subtitle":  "out now",
+        "artworkUrl":  "https://i.scdn.co/image/ab67616d0000b2730b8ab5e42c6045b6190d066f",
+        "accentColor":  "#222323",
+        "sourceUrl":  "https://open.spotify.com/track/4Xj6u5UdqINhGItVdwCLZp",
+        "isPublished":  true,
+        "links":  [
+                      {
+                          "platform":  "spotify",
+                          "url":  "https://open.spotify.com/track/4Xj6u5UdqINhGItVdwCLZp",
+                          "actionLabel":  "Play",
+                          "sortOrder":  0,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  "4Xj6u5UdqINhGItVdwCLZp"
+                      },
+                      {
+                          "platform":  "amazonMusic",
+                          "url":  "https://music.amazon.com/albums/B0FP2Y7NBM?trackAsin=B0FP2YZNZC",
+                          "actionLabel":  "Play",
+                          "sortOrder":  10,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "deezer",
+                          "url":  "https://www.deezer.com/track/3530160141",
+                          "actionLabel":  "Play",
+                          "sortOrder":  20,
+                          "isEnabled":  true,
+                          "deezerTrackId":  "3530160141",
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "tidal",
+                          "url":  "https://listen.tidal.com/track/456926125",
+                          "actionLabel":  "Play",
+                          "sortOrder":  30,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "pandora",
+                          "url":  "https://www.pandora.com/TR:171068128",
+                          "actionLabel":  "Play",
+                          "sortOrder":  40,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "amazonStore",
+                          "url":  "https://amazon.com/dp/B0FP2YZNZC",
+                          "actionLabel":  "Buy",
+                          "sortOrder":  50,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      }
+                  ]
+    },
+    {
+        "slug":  "mangusx",
+        "artistName":  "Mangusx",
+        "title":  "Kill for you",
+        "subtitle":  "out now",
+        "artworkUrl":  "https://i.scdn.co/image/ab67616d0000b273feec56282ac4081ab8de7652",
+        "accentColor":  "#381a0e",
+        "sourceUrl":  "https://open.spotify.com/track/463hYpO0Sj96MgruN8zgfG",
+        "isPublished":  true,
+        "links":  [
+                      {
+                          "platform":  "spotify",
+                          "url":  "https://open.spotify.com/track/463hYpO0Sj96MgruN8zgfG",
+                          "actionLabel":  "Play",
+                          "sortOrder":  0,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  "463hYpO0Sj96MgruN8zgfG"
+                      },
+                      {
+                          "platform":  "amazonMusic",
+                          "url":  "https://music.amazon.com/albums/B0DL6DXS9P?trackAsin=B0DL6CYCPK",
+                          "actionLabel":  "Play",
+                          "sortOrder":  10,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "deezer",
+                          "url":  "https://www.deezer.com/track/3064271841",
+                          "actionLabel":  "Play",
+                          "sortOrder":  20,
+                          "isEnabled":  true,
+                          "deezerTrackId":  "3064271841",
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "tidal",
+                          "url":  "https://listen.tidal.com/track/396156936",
+                          "actionLabel":  "Play",
+                          "sortOrder":  30,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "pandora",
+                          "url":  "https://www.pandora.com/TR:140404149",
+                          "actionLabel":  "Play",
+                          "sortOrder":  40,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "amazonStore",
+                          "url":  "https://amazon.com/dp/B0DL6CYCPK",
+                          "actionLabel":  "Buy",
+                          "sortOrder":  50,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      }
+                  ]
+    },
+    {
+        "slug":  "naym",
+        "artistName":  "NAYM",
+        "title":  "City",
+        "subtitle":  "out now",
+        "artworkUrl":  "https://i.scdn.co/image/ab67616d0000b273e0a868838e78dd092288649c",
+        "accentColor":  "#785549",
+        "sourceUrl":  "https://open.spotify.com/track/7AbEBfwqvWFCjVEiKkmhwe",
+        "isPublished":  true,
+        "links":  [
+                      {
+                          "platform":  "spotify",
+                          "url":  "https://open.spotify.com/track/7AbEBfwqvWFCjVEiKkmhwe",
+                          "actionLabel":  "Play",
+                          "sortOrder":  0,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  "7AbEBfwqvWFCjVEiKkmhwe"
+                      },
+                      {
+                          "platform":  "amazonMusic",
+                          "url":  "https://music.amazon.com/albums/B0DQQ2M8DV?trackAsin=B0DQQ4H3KK",
+                          "actionLabel":  "Play",
+                          "sortOrder":  10,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "tidal",
+                          "url":  "https://listen.tidal.com/track/406344307",
+                          "actionLabel":  "Play",
+                          "sortOrder":  20,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "pandora",
+                          "url":  "https://www.pandora.com/TR:146008835",
+                          "actionLabel":  "Play",
+                          "sortOrder":  30,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "amazonStore",
+                          "url":  "https://amazon.com/dp/B0DQQ4H3KK",
+                          "actionLabel":  "Buy",
+                          "sortOrder":  40,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      }
+                  ]
+    },
+    {
+        "slug":  "omido",
+        "artistName":  "Omido",
+        "title":  "Secrets",
+        "subtitle":  "out now",
+        "artworkUrl":  "https://i.scdn.co/image/ab67616d0000b27321d8f4fcbc7375252a6ccab7",
+        "accentColor":  "#1c1617",
+        "sourceUrl":  "https://open.spotify.com/track/5iniBzC2hR5YYqzMtsgoej",
+        "isPublished":  true,
+        "links":  [
+                      {
+                          "platform":  "spotify",
+                          "url":  "https://open.spotify.com/track/5iniBzC2hR5YYqzMtsgoej",
+                          "actionLabel":  "Play",
+                          "sortOrder":  0,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  "5iniBzC2hR5YYqzMtsgoej"
+                      },
+                      {
+                          "platform":  "amazonMusic",
+                          "url":  "https://music.amazon.com/albums/B0CB945HBS?trackAsin=B0CB93QXWL",
+                          "actionLabel":  "Play",
+                          "sortOrder":  10,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "deezer",
+                          "url":  "https://www.deezer.com/track/2358112295",
+                          "actionLabel":  "Play",
+                          "sortOrder":  20,
+                          "isEnabled":  true,
+                          "deezerTrackId":  "2358112295",
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "tidal",
+                          "url":  "https://listen.tidal.com/track/303615523",
+                          "actionLabel":  "Play",
+                          "sortOrder":  30,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "pandora",
+                          "url":  "https://www.pandora.com/TR:99197414",
+                          "actionLabel":  "Play",
+                          "sortOrder":  40,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "amazonStore",
+                          "url":  "https://amazon.com/dp/B0CB93QXWL",
+                          "actionLabel":  "Buy",
+                          "sortOrder":  50,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      }
+                  ]
+    },
+    {
+        "slug":  "rumelis",
+        "artistName":  "Rumelis",
+        "title":  "Broke My Trust",
+        "subtitle":  "out now",
+        "artworkUrl":  "https://i.scdn.co/image/ab67616d0000b27384f7d8f7a273f3a7277f0a93",
+        "accentColor":  "#555555",
+        "sourceUrl":  "https://open.spotify.com/track/1UfJPFFcWpivbDQ5bbnKrS",
+        "isPublished":  true,
+        "links":  [
+                      {
+                          "platform":  "spotify",
+                          "url":  "https://open.spotify.com/track/1UfJPFFcWpivbDQ5bbnKrS",
+                          "actionLabel":  "Play",
+                          "sortOrder":  0,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  "1UfJPFFcWpivbDQ5bbnKrS"
+                      },
+                      {
+                          "platform":  "amazonMusic",
+                          "url":  "https://music.amazon.com/albums/B0CVL5D1RY?trackAsin=B0CVL4V5M3",
+                          "actionLabel":  "Play",
+                          "sortOrder":  10,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "deezer",
+                          "url":  "https://www.deezer.com/track/2660637172",
+                          "actionLabel":  "Play",
+                          "sortOrder":  20,
+                          "isEnabled":  true,
+                          "deezerTrackId":  "2660637172",
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "tidal",
+                          "url":  "https://listen.tidal.com/track/345223188",
+                          "actionLabel":  "Play",
+                          "sortOrder":  30,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "pandora",
+                          "url":  "https://www.pandora.com/TR:117545271",
+                          "actionLabel":  "Play",
+                          "sortOrder":  40,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "amazonStore",
+                          "url":  "https://amazon.com/dp/B0CVL4V5M3",
+                          "actionLabel":  "Buy",
+                          "sortOrder":  50,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      }
+                  ]
+    },
+    {
+        "slug":  "zandros",
+        "artistName":  "zandros",
+        "title":  "off the deep end",
+        "subtitle":  "out now",
+        "artworkUrl":  "https://i.scdn.co/image/ab67616d0000b273720575b26debc1f763835c5c",
+        "accentColor":  "#672121",
+        "sourceUrl":  "https://open.spotify.com/track/6hrQehpiSdengH2I85S68S",
+        "isPublished":  true,
+        "links":  [
+                      {
+                          "platform":  "spotify",
+                          "url":  "https://open.spotify.com/track/6hrQehpiSdengH2I85S68S",
+                          "actionLabel":  "Play",
+                          "sortOrder":  0,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  "6hrQehpiSdengH2I85S68S"
+                      },
+                      {
+                          "platform":  "amazonMusic",
+                          "url":  "https://music.amazon.com/albums/B0D4NWFYTB?trackAsin=B0D4NJF3Z7",
+                          "actionLabel":  "Play",
+                          "sortOrder":  10,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "deezer",
+                          "url":  "https://www.deezer.com/track/2811377112",
+                          "actionLabel":  "Play",
+                          "sortOrder":  20,
+                          "isEnabled":  true,
+                          "deezerTrackId":  "2811377112",
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "tidal",
+                          "url":  "https://listen.tidal.com/track/364360496",
+                          "actionLabel":  "Play",
+                          "sortOrder":  30,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "pandora",
+                          "url":  "https://www.pandora.com/TR:124965669",
+                          "actionLabel":  "Play",
+                          "sortOrder":  40,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      },
+                      {
+                          "platform":  "amazonStore",
+                          "url":  "https://amazon.com/dp/B0D4NJF3Z7",
+                          "actionLabel":  "Buy",
+                          "sortOrder":  50,
+                          "isEnabled":  true,
+                          "deezerTrackId":  null,
+                          "spotifyTrackId":  null
+                      }
+                  ]
+    }
+]
