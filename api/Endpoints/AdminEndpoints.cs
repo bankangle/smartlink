@@ -141,7 +141,8 @@ public static class AdminEndpoints
                 return Results.Conflict(new { error = $"Slug '{slug}' is already taken." });
 
             var page = new Page { Slug = slug, OwnerId = uid };
-            ApplyInput(page, input);
+            ApplyScalars(page, input);
+            page.Links = BuildLinks(input);
             db.Pages.Add(page);
             await db.SaveChangesAsync();
 
@@ -162,14 +163,23 @@ public static class AdminEndpoints
                 return Results.Conflict(new { error = $"Slug '{slug}' is already taken." });
 
             page.Slug = slug;
-            ApplyInput(page, input);
+            ApplyScalars(page, input);
             page.UpdatedAt = DateTimeOffset.UtcNow;
 
-            // Replace the link set wholesale — simplest correct behavior for an editor.
+            // Replace the link set in two phases. Reassigning the tracked navigation
+            // collection in a single SaveChanges makes EF mistake the brand-new rows
+            // for edits of the deleted ones (UPDATE … WHERE id = <new guid> → 0 rows).
+            // So: delete the loaded links + persist the scalar edits first …
             db.PlatformLinks.RemoveRange(page.Links);
-            page.Links = BuildLinks(input);
-
             await db.SaveChangesAsync();
+
+            // … then insert the fresh set with the FK set explicitly.
+            var newLinks = BuildLinks(input);
+            foreach (var link in newLinks) link.PageId = page.Id;
+            db.PlatformLinks.AddRange(newLinks);
+            await db.SaveChangesAsync();
+
+            page.Links = newLinks;
             return Results.Ok(ToAdminDto(page));
         });
 
@@ -234,7 +244,9 @@ public static class AdminEndpoints
         return (id, user.IsInRole("admin"));
     }
 
-    private static void ApplyInput(Page page, PageInput input)
+    /// <summary>Copies the scalar fields from the input onto the page. Links are
+    /// handled separately by the caller so update can delete the old rows first.</summary>
+    private static void ApplyScalars(Page page, PageInput input)
     {
         page.ArtistName = input.ArtistName.Trim();
         page.Title = input.Title.Trim();
@@ -243,7 +255,6 @@ public static class AdminEndpoints
         page.AccentColor = Trim(input.AccentColor);
         page.SourceUrl = Trim(input.SourceUrl);
         page.IsPublished = input.IsPublished;
-        page.Links = BuildLinks(input);
     }
 
     private static List<PlatformLink> BuildLinks(PageInput input)
