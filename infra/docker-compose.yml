@@ -1,0 +1,86 @@
+# Full production stack: Postgres + API + SvelteKit + Caddy (auto-HTTPS).
+#   cd infra && cp .env.example .env   # then edit .env
+#   docker compose up -d --build
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-smartlink}
+      POSTGRES_USER: ${POSTGRES_USER:-smartlink}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-smartlink}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-smartlink}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ../api
+    restart: unless-stopped
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__Postgres: "Host=db;Port=5432;Database=${POSTGRES_DB:-smartlink};Username=${POSTGRES_USER:-smartlink};Password=${POSTGRES_PASSWORD:-smartlink}"
+      Jwt__Key: ${JWT_KEY:?set JWT_KEY in .env}
+      Jwt__Issuer: smartlink
+      Jwt__Audience: smartlink
+      AdminSeed__Username: ${ADMIN_USERNAME:-admin}
+      AdminSeed__Password: ${ADMIN_PASSWORD:?set ADMIN_PASSWORD in .env}
+      AppUrls__WebBaseUrl: ${PUBLIC_ORIGIN:-http://localhost}
+      Deezer__AppId: ${DEEZER_APP_ID:-}
+      Deezer__SecretKey: ${DEEZER_SECRET_KEY:-}
+      Deezer__RedirectUri: ${PUBLIC_ORIGIN:-http://localhost}/api/deezer/callback
+      Spotify__ClientId: ${SPOTIFY_CLIENT_ID:-}
+      Spotify__ClientSecret: ${SPOTIFY_CLIENT_SECRET:-}
+      Spotify__RedirectUri: ${PUBLIC_ORIGIN:-http://localhost}/api/spotify/callback
+      DemoSeed__Enabled: ${SEED_DEMO:-true}
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8080/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  web:
+    build:
+      context: ../web
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOST: 0.0.0.0
+      # SSR server-to-server calls stay on the internal network.
+      INTERNAL_API_BASE: http://api:8080
+      # Browser-side links share the same origin via Caddy, so leave this empty.
+      PUBLIC_API_BASE: ""
+      # adapter-node CSRF: must match the public origin the browser uses.
+      ORIGIN: ${PUBLIC_ORIGIN:-http://localhost}
+    depends_on:
+      - api
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
+      - api
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:

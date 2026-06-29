@@ -1,0 +1,6 @@
+@SmartLink.Api_HostAddress = http://localhost:5228
+
+GET {{SmartLink.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,17 @@
+# Reverse proxy with automatic HTTPS.
+#   - In production set SITE_ADDRESS to your domain (e.g. links.example.com) and
+#     Caddy provisions a Let's Encrypt cert automatically.
+#   - For local testing leave SITE_ADDRESS=:80 to serve plain HTTP.
+{$SITE_ADDRESS::80} {
+	encode gzip zstd
+
+	# API, click-redirects and Deezer OAuth all live under /api.
+	handle /api/* {
+		reverse_proxy api:8080
+	}
+
+	# Everything else is the SvelteKit app (SSR).
+	handle {
+		reverse_proxy web:3000
+	}
+}

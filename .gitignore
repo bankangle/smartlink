@@ -1,0 +1,29 @@
+# ---- .NET ----
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+.vs/
+
+# ---- Node / SvelteKit ----
+node_modules/
+.svelte-kit/
+build/
+.vercel/
+.output/
+dist/
+
+# ---- Env / secrets ----
+.env
+.env.*
+!.env.example
+*.local
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+
+# ---- Logs ----
+*.log
+npm-debug.log*
